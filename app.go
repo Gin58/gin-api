@@ -20,6 +20,8 @@ func main() {
 	{
 		hello := new(controllers.HelloWorldController)
 		v1.GET("/hello", hello.Default)
+		user := new(controllers.UserController)
+		v1.POST("/signup", user.Signup)
 	}
 
 	router.NoRoute(func(c *gin.Context) {
